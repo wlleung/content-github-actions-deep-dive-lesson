@@ -90,11 +90,6 @@ jobs:
         if: ${{ always() }}
         run: |
             aws lambda delete-function --function-name test-function
-      - name: Wait 30 seconds  
-        run: sleep 30  
-      - name: Destroy test function  
-        if: ${{ always() }}  
-        run: aws lambda delete-function --function-name test-function
   
   deploy:
     runs-on: ubuntu-latest
